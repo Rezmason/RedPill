@@ -22,11 +22,6 @@
 #import "MatrixView.h"
 #import "MatrixMacros.h"
 
-// Given bottom,left coordinates of a 32x32 square within a 256x256 texture,
-// this is the amount to add to both coordinates to get the top,right pixel
-// of the same texture. It's equal to 31.0 / 256.0.
-#define GLYPH_TEX_SIZE 0.121
-
 @implementation MatrixStrip
 
 - (id) initWithCells:(int)cells x:(GLfloat)x y:(GLfloat)y z:(GLfloat)z params:(struct MatrixStripParams)params;
@@ -283,24 +278,24 @@ int g;
    // Get the glyph
    g = cellContents[cellnum];
    // Work out the X and Y positions of the glyph in the texture
-   ix = (g * 32) % 256;
-   iy = 224 - 32 * ((g * 32) / 256) + 1;
+   ix = (g * GLYPH_WIDTH) % GLYPH_IMAGE_WIDTH;
+   iy = (GLYPH_IMAGE_HEIGHT - GLYPH_HEIGHT) - GLYPH_HEIGHT * ((g * GLYPH_HEIGHT) / GLYPH_IMAGE_HEIGHT) + 1;
    // Convert to floats
-   tx = (GLfloat) ix / 256.0;
-   ty = (GLfloat) iy / 256.0;
+   tx = (GLfloat) ix / GLYPH_IMAGE_WIDTH;
+   ty = (GLfloat) iy / GLYPH_IMAGE_HEIGHT;
    // Now work out the texture coordinates of the square containing the glyph
    // Bottom left
    textureArray[8*cellnum + 0] = tx;
    textureArray[8*cellnum + 1] = ty;
    // Bottom right
-   textureArray[8*cellnum + 2] = tx + GLYPH_TEX_SIZE;
+   textureArray[8*cellnum + 2] = tx + GLYPH_TEX_WIDTH;
    textureArray[8*cellnum + 3] = ty;
    // Top right
-   textureArray[8*cellnum + 4] = tx + GLYPH_TEX_SIZE;
-   textureArray[8*cellnum + 5] = ty + GLYPH_TEX_SIZE;
+   textureArray[8*cellnum + 4] = tx + GLYPH_TEX_WIDTH;
+   textureArray[8*cellnum + 5] = ty + GLYPH_TEX_HEIGHT;
    // Top left
    textureArray[8*cellnum + 6] = tx;
-   textureArray[8*cellnum + 7] = ty + GLYPH_TEX_SIZE;
+   textureArray[8*cellnum + 7] = ty + GLYPH_TEX_HEIGHT;
 }
 
 // Compute quad, color and texture vertices for the cursor, bumped up by given offset

@@ -38,7 +38,23 @@
 // The pixmap is an 8x8 grid, glyph 0 = top left, and should be empty space
 // Each square of the grid is 32x32 and contains one glyph
 // Not all squares need to be filled
-#define NUM_GLYPHS 64
+#define NUM_GLYPHS 8
+#define GLYPH_WIDTH 64
+#define GLYPH_IMAGE_WIDTH 256
+#define GLYPH_HEIGHT 56
+#define GLYPH_IMAGE_HEIGHT 224
+
+// Given bottom,left coordinates of a 32x32 square within a 256x256 texture,
+// this is the amount to add to both coordinates to get the top,right pixel
+// of the same texture. It's equal to 31.0 / 256.0.
+#define GLYPH_TEX_WIDTH (GLYPH_WIDTH - 1.0) / GLYPH_IMAGE_WIDTH
+#define GLYPH_TEX_HEIGHT (GLYPH_HEIGHT - 1.0) / GLYPH_IMAGE_HEIGHT
+
+
+#define GLYPH_COLOR 0x00FF00
+#define GLYPH_RED ((GLYPH_COLOR >> 16) & 0xFF) / 0xFF
+#define GLYPH_GREEN ((GLYPH_COLOR >> 8) & 0xFF) / 0xFF
+#define GLYPH_BLUE ((GLYPH_COLOR >> 0) & 0xFF) / 0xFF
 
 // Cell size in cm
 // Bear in mind that it needs to be visible when CLIP_FAR away, each cell holds one glyph
