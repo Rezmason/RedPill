@@ -45,16 +45,27 @@
 #define GLYPH_IMAGE_HEIGHT 224
 
 // Given bottom,left coordinates of a 32x32 square within a 256x256 texture,
-// this is the amount to add to both coordinates to get the top,right pixel
+// this is the amount to TWO to both coordinates to get the top,right pixel
 // of the same texture. It's equal to 31.0 / 256.0.
 #define GLYPH_TEX_WIDTH (GLYPH_WIDTH - 1.0) / GLYPH_IMAGE_WIDTH
 #define GLYPH_TEX_HEIGHT (GLYPH_HEIGHT - 1.0) / GLYPH_IMAGE_HEIGHT
 
 
-#define GLYPH_COLOR 0x00FF00
-#define GLYPH_RED ((GLYPH_COLOR >> 16) & 0xFF) / 0xFF
-#define GLYPH_GREEN ((GLYPH_COLOR >> 8) & 0xFF) / 0xFF
-#define GLYPH_BLUE ((GLYPH_COLOR >> 0) & 0xFF) / 0xFF
+#define GLYPH_CURSOR_COLOR 0xFF0000
+#define GLYPH_COLOR_ONE 0xFFFFFF
+#define GLYPH_COLOR_TWO 0xFF6666
+
+#define GLYPH_RED_ONE ((GLYPH_COLOR_ONE >> 16) & 0xFF) / 0xFF
+#define GLYPH_GREEN_ONE ((GLYPH_COLOR_ONE >> 8) & 0xFF) / 0xFF
+#define GLYPH_BLUE_ONE ((GLYPH_COLOR_ONE >> 0) & 0xFF) / 0xFF
+
+#define GLYPH_RED_TWO ((GLYPH_COLOR_TWO >> 16) & 0xFF) / 0xFF
+#define GLYPH_GREEN_TWO ((GLYPH_COLOR_TWO >> 8) & 0xFF) / 0xFF
+#define GLYPH_BLUE_TWO ((GLYPH_COLOR_TWO >> 0) & 0xFF) / 0xFF
+
+#define GLYPH_CURSOR_RED ((GLYPH_CURSOR_COLOR >> 16) & 0xFF) / 0xFF
+#define GLYPH_CURSOR_GREEN ((GLYPH_CURSOR_COLOR >> 8) & 0xFF) / 0xFF
+#define GLYPH_CURSOR_BLUE ((GLYPH_CURSOR_COLOR >> 0) & 0xFF) / 0xFF
 
 // Cell size in cm
 // Bear in mind that it needs to be visible when CLIP_FAR away, each cell holds one glyph

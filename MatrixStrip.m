@@ -208,7 +208,10 @@ int i;
 - (void) computeColorVertices
 {
    int i,maxi,c;
+   int index;
    GLfloat g, gstep, cursorglow;
+   GLfloat red, green, blue, alpha;
+   GLfloat val, colorMult;
 
    c = 0; // To suppress spurious warning
    gstep = stripParams.colorCycleSpeed;
@@ -217,19 +220,15 @@ int i;
    maxi = cursorDrawing ? cursorPos : stripSize;
    for (i=0; i < maxi; i++) {
       for (c = 0; c < 4; c++) {
-         // Some shade of green if cell is not empty
-         colorArray[16*i + 4*c + 1] = (cellState[i] == 0) ? 0.0 : g;
-         // Cells which are very bright are slightly whitened
-         colorArray[16*i + 4*c + 0] = ((g > 0.7) && (cellState[i] != 0)) ? (g - 0.6) : 0.0;
-         colorArray[16*i + 4*c + 2] = ((g > 0.7) && (cellState[i] != 0)) ? (g - 0.6) : 0.0;
-         // Transparent if cell is empty, otherwise opaque
-         colorArray[16*i + 4*c + 3] = (cellState[i] == 0) ? 0.0 : 1.0;
+         index = 16*i + 4*c;
+         colorArray[index] = g;
       }
       g += gstep;
       if (g > 1.0) {
          g = 0.2;
       }
    }
+   
    // Cycle the start color used above, to make the colors appear to fall
    startColor -= stripParams.colorFallSpeed;
    if (startColor < 0.2) {
@@ -241,19 +240,45 @@ int i;
       maxi = cursorPos - 1;
       cursorglow = 0.8;
       for (i = maxi; i >= 0 && cursorglow > 0.2; i--) {
-      // If there's some cursor-imparted glow left, use it
-         if (colorArray[16*i + 4*c + 1] < cursorglow) {
+         
+         // If there's some cursor-imparted glow left, use it
+         if (colorArray[16*i] < cursorglow) {
             for (c = 0; c < 4; c++) {
-               // Some shade of green if cell is not empty
-               colorArray[16*i + 4*c + 1] = (cellState[i] == 0) ? 0.0 : cursorglow;
-               // Cells which are very bright are slightly whitened
-               colorArray[16*i + 4*c + 0] = ((cursorglow > 0.7) && (cellState[i] != 0)) ? (cursorglow - 0.6) : 0.0;
-               colorArray[16*i + 4*c + 2] = ((cursorglow > 0.7) && (cellState[i] != 0)) ? (cursorglow - 0.6) : 0.0;
-               // Transparent if cell is empty, otherwise opaque
-               colorArray[16*i + 4*c + 3] = (cellState[i] == 0) ? 0.0 : 1.0;
+               index = 16*i + 4*c;
+               colorArray[index] = cursorglow;
             }
          }
          cursorglow -= gstep;
+      }
+   }
+   
+   for (i=0; i < maxi; i++) {
+      for (c = 0; c < 4; c++) {
+         
+         index = 16*i + 4*c;
+         
+         val = colorArray[index];
+         
+         // Some shade of green if cell is not empty
+         colorMult = (cellState[i] == 0) ? 0.0 : val;
+         
+         red = GLYPH_RED_ONE;
+         green = GLYPH_GREEN_ONE;
+         blue = GLYPH_BLUE_ONE;
+         
+         if ((val > 0.7) && (cellState[i] != 0)) {
+            red = GLYPH_RED_TWO;
+            green = GLYPH_GREEN_TWO;
+            blue = GLYPH_BLUE_TWO;
+         }
+         
+         // Transparent if cell is empty, otherwise opaque
+         alpha = (cellState[i] == 0) ? 0.0 : 1.0;
+         
+         colorArray[index + 0] = colorMult * red;
+         colorArray[index + 1] = colorMult * green;
+         colorArray[index + 2] = colorMult * blue;
+         colorArray[index + 3] = alpha;
       }
    }
 }
@@ -306,12 +331,12 @@ GLfloat y,by,x,z;
 GLfloat size;
 GLfloat cc;
 
-   // Color is easy -- bright white at all four corners if drawing, else black
+   // Color is easy -- cursor color at all four corners if drawing, else black
    cc = cursorDrawing ? 1.0 : 0.0;
    for (c = 0; c < 4; c++) {
-      colorArray[16*cell + 4*c + 0] = cc;
-      colorArray[16*cell + 4*c + 1] = cc;
-      colorArray[16*cell + 4*c + 2] = cc;
+      colorArray[16*cell + 4*c + 0] = GLYPH_CURSOR_RED;
+      colorArray[16*cell + 4*c + 1] = GLYPH_CURSOR_GREEN;
+      colorArray[16*cell + 4*c + 2] = GLYPH_CURSOR_BLUE;
       colorArray[16*cell + 4*c + 3] = 1.0;
    }
    // Position is like for a regular cell, but bumped up by offset * cell height
