@@ -36,13 +36,13 @@
 #define SPOON_KEY @"spoon"
 
 // Default values for same
-#define STRIPS_DEFAULT @"50"
-#define VELOCITY_DEFAULT @"40"
-#define DEPTH_DEFAULT @"200"
-#define CYCLING_DEFAULT @"5"
-#define FALLING_DEFAULT @"2"
-#define CURSOR_DEFAULT @"10"
-#define FOG_DEFAULT @"15"
+#define STRIPS_DEFAULT @"70"
+#define VELOCITY_DEFAULT @"12"
+#define DEPTH_DEFAULT @"105"
+#define CYCLING_DEFAULT @"8"
+#define FALLING_DEFAULT @"1.5"
+#define CURSOR_DEFAULT @"60"
+#define FOG_DEFAULT @"0"
 #define TOPSTART_DEFAULT @"YES"
 #define TOPSTART_DEFAULT_BOOLEAN TRUE
 #define MAINONLY_DEFAULT @"NO"
