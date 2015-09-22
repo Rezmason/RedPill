@@ -38,7 +38,7 @@
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCFA80370C50100C91783 /* RedPill_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedPill_Prefix.pch; sourceTree = "<group>"; };
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		8D255AD30486D3F9007BF209 /* RedPill.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedPill.saver; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D255AD30486D3F9007BF209 /* Natrix.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Natrix.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0F75DEA14649DBA00BC0085 /* GLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLUtils.h; sourceTree = "<group>"; };
 		C0F75DEB14649DBA00BC0085 /* GLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLUtils.m; sourceTree = "<group>"; };
 		C0F75DEC14649DBA00BC0085 /* MatrixMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixMacros.h; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D255AD30486D3F9007BF209 /* RedPill.saver */,
+				8D255AD30486D3F9007BF209 /* Natrix.saver */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,9 +185,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8D255AC50486D3F9007BF209 /* RedPill */ = {
+		8D255AC50486D3F9007BF209 /* Natrix */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EF7AD72D08BB986600CE4634 /* Build configuration list for PBXNativeTarget "RedPill" */;
+			buildConfigurationList = EF7AD72D08BB986600CE4634 /* Build configuration list for PBXNativeTarget "Natrix" */;
 			buildPhases = (
 				8D255AC60486D3F9007BF209 /* Headers */,
 				8D255AC90486D3F9007BF209 /* Resources */,
@@ -199,10 +199,10 @@
 			);
 			dependencies = (
 			);
-			name = RedPill;
+			name = Natrix;
 			productInstallPath = "$(HOME)/Library/Screen Savers";
 			productName = RedPill;
-			productReference = 8D255AD30486D3F9007BF209 /* RedPill.saver */;
+			productReference = 8D255AD30486D3F9007BF209 /* Natrix.saver */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -213,7 +213,7 @@
 			attributes = {
 				LastUpgradeCheck = 0700;
 			};
-			buildConfigurationList = EF7AD73108BB986600CE4634 /* Build configuration list for PBXProject "RedPill" */;
+			buildConfigurationList = EF7AD73108BB986600CE4634 /* Build configuration list for PBXProject "Natrix" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -227,7 +227,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D255AC50486D3F9007BF209 /* RedPill */,
+				8D255AC50486D3F9007BF209 /* Natrix */,
 			);
 		};
 /* End PBXProject section */
@@ -303,11 +303,11 @@
 				GCC_MODEL_TUNING = "";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = RedPill_Prefix.pch;
+				GCC_PREFIX_HEADER = Natrix_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ATH0.${PRODUCT_NAME:identifier}";
-				PRODUCT_NAME = RedPill;
+				PRODUCT_NAME = Natrix;
 				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = saver;
 				ZERO_LINK = NO;
@@ -323,11 +323,11 @@
 				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = RedPill_Prefix.pch;
+				GCC_PREFIX_HEADER = Natrix_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ATH0.${PRODUCT_NAME:identifier}";
-				PRODUCT_NAME = RedPill;
+				PRODUCT_NAME = Natrix;
 				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = saver;
 				ZERO_LINK = NO;
@@ -345,7 +345,7 @@
 				INFOPLIST_FILE = Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = RedPill;
+				PRODUCT_NAME = "The Natrix";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = saver;
 			};
@@ -360,7 +360,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = RedPill;
+				PRODUCT_NAME = "The Natrix";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = saver;
 			};
@@ -369,7 +369,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EF7AD72D08BB986600CE4634 /* Build configuration list for PBXNativeTarget "RedPill" */ = {
+		EF7AD72D08BB986600CE4634 /* Build configuration list for PBXNativeTarget "Natrix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EF7AD72E08BB986600CE4634 /* Debug */,
@@ -378,7 +378,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EF7AD73108BB986600CE4634 /* Build configuration list for PBXProject "RedPill" */ = {
+		EF7AD73108BB986600CE4634 /* Build configuration list for PBXProject "Natrix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EF7AD73208BB986600CE4634 /* Debug */,

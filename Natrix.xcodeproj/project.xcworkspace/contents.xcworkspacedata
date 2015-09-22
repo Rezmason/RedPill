@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:RedPill.xcodeproj">
+      location = "self:/Users/rezmason/Documents/Projects/RedPill/Natrix.xcodeproj">
    </FileRef>
 </Workspace>
