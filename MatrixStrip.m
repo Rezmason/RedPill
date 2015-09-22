@@ -223,13 +223,13 @@ int i;
       }
       g += gstep;
       if (g > 1.0) {
-         g = 0.2;
+         g = 0.5;
       }
    }
    
    // Cycle the start color used above, to make the colors appear to fall
    startColor -= stripParams.colorFallSpeed;
-   if (startColor < 0.2) {
+   if (startColor < 0.5) {
       startColor = 1.0;
    }
    
@@ -273,9 +273,9 @@ int i;
          // Transparent if cell is empty, otherwise opaque
          alpha = (cellState[i] == 0) ? 0.0 : 1.0;
          
-         colorArray[index + 0] = colorMult * red;
-         colorArray[index + 1] = colorMult * green;
-         colorArray[index + 2] = colorMult * blue;
+         colorArray[index + 0] = red * colorMult + (1.0 - colorMult);
+         colorArray[index + 1] = green * colorMult + (1.0 - colorMult);
+         colorArray[index + 2] = blue * colorMult + (1.0 - colorMult);
          colorArray[index + 3] = alpha;
       }
    }

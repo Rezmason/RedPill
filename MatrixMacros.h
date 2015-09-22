@@ -55,17 +55,17 @@
 #define GLYPH_COLOR_ONE 0xFFFFFF
 #define GLYPH_COLOR_TWO 0xFF6666
 
-#define GLYPH_RED_ONE ((GLYPH_COLOR_ONE >> 16) & 0xFF) / 0xFF
-#define GLYPH_GREEN_ONE ((GLYPH_COLOR_ONE >> 8) & 0xFF) / 0xFF
-#define GLYPH_BLUE_ONE ((GLYPH_COLOR_ONE >> 0) & 0xFF) / 0xFF
+#define GLYPH_RED_ONE 1.0
+#define GLYPH_GREEN_ONE 1.0
+#define GLYPH_BLUE_ONE 1.0
 
-#define GLYPH_RED_TWO ((GLYPH_COLOR_TWO >> 16) & 0xFF) / 0xFF
-#define GLYPH_GREEN_TWO ((GLYPH_COLOR_TWO >> 8) & 0xFF) / 0xFF
-#define GLYPH_BLUE_TWO ((GLYPH_COLOR_TWO >> 0) & 0xFF) / 0xFF
+#define GLYPH_RED_TWO 1.0
+#define GLYPH_GREEN_TWO 0.65
+#define GLYPH_BLUE_TWO 0
 
-#define GLYPH_CURSOR_RED ((GLYPH_CURSOR_COLOR >> 16) & 0xFF) / 0xFF
-#define GLYPH_CURSOR_GREEN ((GLYPH_CURSOR_COLOR >> 8) & 0xFF) / 0xFF
-#define GLYPH_CURSOR_BLUE ((GLYPH_CURSOR_COLOR >> 0) & 0xFF) / 0xFF
+#define GLYPH_CURSOR_RED 0.96
+#define GLYPH_CURSOR_GREEN 0.69
+#define GLYPH_CURSOR_BLUE 0.12
 
 // Cell size in cm
 // Bear in mind that it needs to be visible when CLIP_FAR away, each cell holds one glyph

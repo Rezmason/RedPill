@@ -186,7 +186,7 @@ NSOpenGLPixelFormat *pixformat;
    }
    // Clear the screen to black, so that the screensaver fades to black
    [[glview openGLContext] makeCurrentContext];
-   glClearColor(0.0, 0.0, 0.0, 0.0);
+   glClearColor(0.4, 0.8, 1.0, 1.0);
    CheckGLError("startAnimation","glClearColor(0.0, 0.0, 0.0, 0.0)");
    glClear(GL_COLOR_BUFFER_BIT);
    CheckGLError("startAnimation","glClear(GL_COLOR_BUFFER_BIT)");
@@ -236,7 +236,7 @@ NSOpenGLPixelFormat *pixformat;
    
    if (mainScreenOnly && !isMainScreen) {
      [[glview openGLContext] makeCurrentContext];
-     glClearColor(0.0, 0.0, 0.0, 0.0);
+     glClearColor(0.4, 0.8, 1.0, 1.0);
      return;
    }     
    
@@ -450,7 +450,7 @@ MatrixStrip *strip;
       return;
    }
    [[glview openGLContext] makeCurrentContext];
-   glClearColor(0.0, 0.0, 0.0, 0.0);
+   glClearColor(0.4, 0.8, 1.0, 1.0);
    CheckGLError("drawGL","glClearColor(0.0, 0.0, 0.0, 0.0)");
    glClear(GL_COLOR_BUFFER_BIT);
    CheckGLError("drawGL","glClear(GL_COLOR_BUFFER_BIT)");
