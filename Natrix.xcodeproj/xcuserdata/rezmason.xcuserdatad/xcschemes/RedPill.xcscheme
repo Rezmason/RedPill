@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8D255AC50486D3F9007BF209"
-               BuildableName = "RedPill.saver"
+               BuildableName = "Natrix.saver"
                BlueprintName = "Natrix"
                ReferencedContainer = "container:Natrix.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D255AC50486D3F9007BF209"
-            BuildableName = "RedPill.saver"
+            BuildableName = "Natrix.saver"
             BlueprintName = "Natrix"
             ReferencedContainer = "container:Natrix.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D255AC50486D3F9007BF209"
-            BuildableName = "RedPill.saver"
+            BuildableName = "Natrix.saver"
             BlueprintName = "Natrix"
             ReferencedContainer = "container:Natrix.xcodeproj">
          </BuildableReference>
