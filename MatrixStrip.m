@@ -256,7 +256,7 @@ int i;
          index = 16*i + 4*c;
          
          val = colorArray[index];
-         
+        
          // Some shade of green if cell is not empty
          colorMult = (cellState[i] == 0) ? 0.0 : val;
          
@@ -500,7 +500,7 @@ float zapchance;
                cellContents[c] = 1 + (random() % (stripParams.numGlyphs - 1));
             } else {
                // Otherwise give this one the value of the cell above
-               cellContents[c] = cellContents[c-1];
+               cellContents[c] = (cellContents[c-1] + 1) % (stripParams.numGlyphs - 1);
             }
             // Decrement state to age the cell
             cellState[c] -= 1;

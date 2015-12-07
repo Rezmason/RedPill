@@ -200,7 +200,7 @@ NSOpenGLPixelFormat *pixformat;
    // Load and bind the texture bitmap
    if (![matrixGlyphs fileLoaded]) {
       // Load the PNG of glyphs
-      [matrixGlyphs loadFromFile:@"Glyphs.png"];
+      [matrixGlyphs loadFromFile:@"pacyglyphs_2.png"];
    }
    // Set up some parameters
    x = 0.0;
@@ -353,7 +353,7 @@ struct MatrixStripParams tweaked;
 // Initialize OpenGL
 - (void)initGL
 {
-GLfloat fogcolor[4] = {0.0, 0.0, 0.0, 1.0};
+GLfloat fogcolor[4] = {0.4, 0.8, 1.0, 1.0};
 
    // Check there's an NSOpenGLView before we continue
    if (glview == nil) {

@@ -38,7 +38,7 @@
 // The pixmap is an 8x8 grid, glyph 0 = top left, and should be empty space
 // Each square of the grid is 32x32 and contains one glyph
 // Not all squares need to be filled
-#define NUM_GLYPHS 8
+#define NUM_GLYPHS 10
 #define GLYPH_WIDTH 64
 #define GLYPH_IMAGE_WIDTH 256
 #define GLYPH_HEIGHT 56
@@ -56,12 +56,12 @@
 #define GLYPH_COLOR_TWO 0xFF6666
 
 #define GLYPH_RED_ONE 1.0
-#define GLYPH_GREEN_ONE 1.0
-#define GLYPH_BLUE_ONE 1.0
+#define GLYPH_GREEN_ONE 0.65
+#define GLYPH_BLUE_ONE 0.0
 
 #define GLYPH_RED_TWO 1.0
-#define GLYPH_GREEN_TWO 0.65
-#define GLYPH_BLUE_TWO 0
+#define GLYPH_GREEN_TWO 1.0
+#define GLYPH_BLUE_TWO 1.0
 
 #define GLYPH_CURSOR_RED 0.96
 #define GLYPH_CURSOR_GREEN 0.69
